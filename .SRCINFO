@@ -1,19 +1,23 @@
 pkgbase = libva-v4l2
-	pkgdesc = VA-API backend for Qualcomm Iris V4L2 M2M video acceleration
+	pkgdesc = VA-API backend for Qualcomm Iris stateful V4L2 M2M decoding and H.264/HEVC encoding
 	pkgver = 1.0.0
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/radxa-pkg/libva-v4l2
 	arch = aarch64
 	license = MIT
+	license = GPL-2.0-only
 	makedepends = git
 	makedepends = meson
 	makedepends = ninja
 	makedepends = pkgconf
+	depends = glibc
 	depends = gcc-libs
 	depends = libva
 	depends = libdrm
 	depends = mesa
 	depends = libglvnd
+	optdepends = qcom-fastcv-binaries: CDSP video scaling
+	optdepends = qcom-fastrpc: CDSP video scaling
 	source = libva-v4l2::git+https://github.com/radxa-pkg/libva-v4l2.git#tag=v1.0.0
 	sha256sums = SKIP
 
